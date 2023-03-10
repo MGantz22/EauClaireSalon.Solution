@@ -4,6 +4,8 @@
 
 @model HairSalon.Models.Client
 
+@*WIP- you MUST add a stylist before you can add clients -WIP*@
+
 <h2>Add a New Client</h2>
 @using (Html.BeginForm())
 {
@@ -14,4 +16,5 @@
   @Html.DropDownList("StylistId")<br><br>
   <input type="submit" class='button' value='Add Client to Stylist' />
 }
+
 <p>@Html.ActionLink("show all", "Index")</p>
