@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 
 namespace HairSalon.Controllers
@@ -6,11 +7,11 @@ namespace HairSalon.Controllers
   public class HomeController : Controller
   {
 
-    [Route("/")]
+    [HttpGet("/")]
     public ActionResult Index() 
     {
       return View();
     }
-
+    
   }
 }
