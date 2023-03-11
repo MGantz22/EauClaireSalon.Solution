@@ -4,17 +4,21 @@
 
 @model HairSalon.Models.Client
 
-
+<h4>You must add a stylist before you try to add clients</h4>
+<h4>Visit the stylist page to add a stylist: @Html.ActionLink("Stylist Page", "Create", "Stylists").</h4>
 
 <h2>Add a New Client</h2>
+<br>
+
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
-  <br><br>
-  @Html.LableFor(model => model.Stylist)
+  @Html.LabelFor(model => model.ClientName)
+  @Html.TextBoxFor(model => model.ClientName)
+<br><br>
+  @Html.LabelFor(model => model.Stylist)
   @Html.DropDownList("StylistId")<br><br>
-  <input type="submit" class='button' value='Add Client to Stylist' />
-}
 
-<p>@Html.ActionLink("show all", "Index")</p>
+  <input type="submit" class="button" value="Add Client">
+}
+<br><br>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

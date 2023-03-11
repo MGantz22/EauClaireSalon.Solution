@@ -9,6 +9,7 @@ namespace HairSalon
   {
     static void Main(string[] args)
     {
+
       WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
       builder.Services.AddControllersWithViews();
@@ -23,7 +24,6 @@ namespace HairSalon
 
       WebApplication app = builder.Build();
 
-      // app.UseDeveloperExceptionPage();
       app.UseHttpsRedirection();
       app.UseStaticFiles();
 
