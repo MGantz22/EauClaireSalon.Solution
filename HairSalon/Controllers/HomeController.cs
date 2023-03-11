@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Razor;
+
 
 
 namespace HairSalon.Controllers
@@ -12,6 +12,6 @@ namespace HairSalon.Controllers
     {
       return View();
     }
-    
+
   }
 }

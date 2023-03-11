@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +19,9 @@ namespace HairSalon.Controllers
     public ActionResult Index()
     {
       List<Client> model = _db.Clients
-                            .Include(client => client.Stylist)
-                            .ToList();
-    ViewBad.PageTitle = "View All Clients for this Stylist";
-    return View(model);
+                              .Include(client => client.Stylist)
+                              .ToList();
+      return View(model);
     }
 
     public ActionResult Create()
@@ -33,9 +31,9 @@ namespace HairSalon.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create (Client client)
+    public ActionResult Create(Client client)
     {
-      if (client.StylistId == 0)
+      if(client.StylistId == 0)
       {
         return RedirectToAction("Create");
       }
@@ -44,14 +42,6 @@ namespace HairSalon.Controllers
       return RedirectToAction("Index");
     }
 
-    public ActionResult Details(int id)
-    {
-      Client thisClient = _db.Clients
-                          .Include(client => client.Stylist)
-                          .FirstOrDefault(client => client.ClientId == id);
-      return View(thisClient);
-    }
-  
     public ActionResult Edit(int id)
     {
       Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
@@ -67,12 +57,20 @@ namespace HairSalon.Controllers
       return RedirectToAction("Index");
     }
 
+    public ActionResult Details(int id)
+    {
+      Client thisClient = _db.Clients
+                            .Include(client => client.Stylist)
+                            .FirstOrDefault(client => client.ClientId == id);
+      return View(thisClient);
+    }
+
     public ActionResult Delete(int id)
     {
       Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
       return View(thisClient);
     }
-    
+
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
