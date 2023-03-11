@@ -6,10 +6,11 @@ using HairSalon.Models;
 
 namespace HairSalon.Controllers
 {
-  public class StylistController : Controller
+  public class StylistsController : Controller
   {
+  
     private readonly HairSalonContext _db;
-    
+
     public StylistsController(HairSalonContext db)
     {
       _db = db;
@@ -23,7 +24,7 @@ namespace HairSalon.Controllers
 
     public ActionResult Create()
     {
-      retuen View();
+      return View();
     }
 
     [HttpPost]
