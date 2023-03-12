@@ -1,3 +1,16 @@
+body {
+  padding: 2%;
+  background-image: url("../img/trolls.jpg");
+  background-color: fffff;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-size: 110%;
+
+}
+
+span {
+  color: rgb(243, 49, 88);
+}
+
 .button {
   display: inline-block;
   padding: 15px 25px;

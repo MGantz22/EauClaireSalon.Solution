@@ -4,9 +4,9 @@
 
 @model HairSalon.Models.Client
 
-<h4>You must add a stylist before you try to add clients</h4>
+<h4>You MUST add a stylist before you try to add clients!</h4>
 <h4>Visit the stylist page to add a stylist: @Html.ActionLink("Stylist Page", "Create", "Stylists").</h4>
-
+<br>
 <h2>Add a New Client</h2>
 <br>
 
@@ -21,4 +21,4 @@
   <input type="submit" class="button" value="Add Client">
 }
 <br><br>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<p>@Html.ActionLink("Return Home", "Index", "Home")</p>

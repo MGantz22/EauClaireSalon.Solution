@@ -9,7 +9,7 @@
 
 @if (@Model.Count == 0)
 {
-  <h3>No clients at the moment.</h3>
+  <h3>Nope!, You <span>MUST</span> add a stylist first!</h3>
 }
 
 else
@@ -22,5 +22,5 @@ else
   </ul>
 }
 <p>@Html.ActionLink("Add New Client", "Create")</p>
-<br>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+
+<p>@Html.ActionLink("Return Home", "Index", "Home")</p>
