@@ -4,7 +4,7 @@
 
 @model HairSalon.Models.Client
 
-<h1>Edit</h1>
+<h1>Edit:</h1><br>
 <h3>Edit client: @Html.DisplayFor(model => model.ClientName)</h3>
 
 @using (Html.BeginForm())
@@ -13,10 +13,11 @@
 
   @Html.LabelFor(model => model.ClientName)
   @Html.EditorFor(model => model.ClientName)
-
+<br><br>
   @Html.LabelFor(model => model.Stylist)
   @Html.DropDownList("StylistId")
 
   <input type="submit" class="button" value="Save" />
 }
+<br>
 <p>@Html.ActionLink("Back to Client List", "Index")</p>
